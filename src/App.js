@@ -30,7 +30,7 @@ function App() {
       'Content-Type': 'application/json; charset=UTF-8'
     }
     axios.post(
-      apiUrl + normQuery, {}, {headers: headers, timeout: 6000}
+      apiUrl + normQuery, {}, {headers: headers, timeout: 8000}
     ).then(
       response => {
         if(!response.data || !Array.isArray(response.data) || response.data.length <= 0){
