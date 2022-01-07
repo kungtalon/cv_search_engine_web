@@ -1,38 +1,151 @@
-.App {
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: "Montserrat", sans-serif;
+}
+body {
+  background: #eee;
+  padding: 0;
+}
+
+header {
+  background-color: #f5ba13;
+  margin: auto -16px;
+  padding: 16px 32px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+  color: #fff;
+  font-family: "McLaren", cursive;
+  font-weight: 200;
+}
+
+footer {
+  position: absolute;
   text-align: center;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+footer p {
+  color: #ccc;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.home-card {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  height: 80vh;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.home-card {
+  padding-left: 4em;
+  padding-right: 4em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.home-card-header {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.home-info-markdown {
+  padding-left: 4em;
+  padding-right: 4em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.home-info-text {
+  padding-left: 8px;
+}
+
+.form-row {
+  position: 'absolute';
+  right: 0;
+}
+
+.checkboxes {
+  color: antiquewhite;
+  padding-left: 10px;
+  margin-top: 7px;
+}
+
+.doc-card {
+  position: relative;
+  /* overflow: auto; */
+  z-index: 1;
+  height: auto;
+  /* margin-left: 20px; */
+  padding: 20px;
+  margin-bottom: 14px;
+  text-align: left;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, .1);
+}
+
+.doc-title {
+  /* display: flex; */
+  flex-direction: row;
+  width: auto;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  /* flex-wrap: wrap; */
+}
+
+.doc-title-text {
+  /* width: 89%; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.doc-card-label {
+  display: flex;
+  position: absolute;
+  right: 0;
+  text-align: right;
+  flex-wrap: nowrap;
+  /* flex-direction: row; */
+  background: #f5ba13;
+  font-size: 1rem;
+  padding-left: 1em;
+  padding-right: 1em;
+  border-radius: 1em;
+  margin-left: auto;
+  justify-content: flex-end;
+}
+
+.intro-markdown {
+  padding-left: 3em;
+  padding-right: 3em;
+}
+
+.markdown-body {
+  border: 1px solid #d0d7de;
+  padding: 3em;
+  border-radius: 10px;
+}
+
+.jumbotron {
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  background-color: #e9ecef;
+  border-radius: .3rem;
+  font-weight: "bold";
+}
+
+.error-page {
+  padding-top: 60px;
+  font-size: 30px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
 }
