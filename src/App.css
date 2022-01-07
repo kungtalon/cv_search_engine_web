@@ -24,6 +24,12 @@ header h1 {
   font-weight: 200;
 }
 
+pre {
+  background-color: #f6f8fa;
+  border-radius: 4px;
+  padding-left: 20px;
+}
+
 footer {
   position: absolute;
   text-align: center;
@@ -135,7 +141,7 @@ footer p {
 .jumbotron {
   padding: 2rem 1rem;
   margin-bottom: 2rem;
-  background-color: #e9ecef;
+  /* background-color: #e9ecef; */
   border-radius: .3rem;
   font-weight: "bold";
 }
@@ -143,6 +149,12 @@ footer p {
 .error-page {
   padding-top: 60px;
   font-size: 30px;
+}
+
+.img-caption {
+  display: flex;
+  text-align: center;
+  color: blue;
 }
 
 @keyframes spin {
