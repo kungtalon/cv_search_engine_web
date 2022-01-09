@@ -43,15 +43,16 @@ footer p {
 }
 
 .home-card {
-  display: flex;
-  height: 80vh;
-  justify-content: center;
-  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 62%;
+  transform: translate(-50%, -50%);
 }
 
 .home-card {
-  padding-left: 4em;
-  padding-right: 4em;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 .home-card-header {
@@ -127,9 +128,55 @@ footer p {
   justify-content: flex-end;
 }
 
+.doc-attributes {
+  align-items: left;
+}
+
+.doc-link-button{
+  padding-left: 0.6em;
+}
+
+.intro-page .container {
+  width: 65%;
+}
+
 .intro-markdown {
-  padding-left: 3em;
-  padding-right: 3em;
+  /* padding-left: 3em; */
+  /* padding-right: 3em; */
+  line-height: 1.7em;
+  font-family: 'Noto Sans', sans-serif;
+  padding-left: auto;
+  align-content: center;
+}
+
+.intro-markdown h2 {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.intro-markdown h3 {
+  color: gray;
+  margin-top: 1.8rem;
+  margin-bottom: 1.4rem;
+}
+
+.intro-markdown h4 {
+  color: gray;
+  margin-top: 1.4rem;
+  margin-bottom: 1.2rem;
+}
+
+#intro-contents-table {
+  display: flex;
+  position: fixed;
+  width: 20%;
+}
+
+#intro-contents-table a {
+  color: black;
+}
+
+#intro-contents-table a:hover{
+  color: green;
 }
 
 .markdown-body {

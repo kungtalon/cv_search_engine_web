@@ -8,8 +8,8 @@ function Header(props) {
         <Container>
         <Navbar.Brand>CV Search</Navbar.Brand>
         <Nav className="me-auto">
-          <Nav.Link onClick={props.onClickHome}>Home</Nav.Link>
-          <Nav.Link onClick={props.onClickIntro}>Intro</Nav.Link>
+          <Nav.Link href="" onClick={props.onClickHome}>Home</Nav.Link>
+          <Nav.Link href="" onClick={props.onClickIntro}>Intro</Nav.Link>
           {/* <Nav.Link href="#feedback">Feedback</Nav.Link> */}
           <Nav.Link href="https://github.com/kungtalon"><i className="icon fa fa-github"></i>Github</Nav.Link>
         </Nav>

@@ -1,4 +1,4 @@
-import { Card } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 
 function DocCard(props) {
     const meta = props.meta
@@ -9,6 +9,17 @@ function DocCard(props) {
         return (
             <div className="doc-card-label" style={{background: color}}>{meta.conference} {meta.year}</div>
         )
+    }
+
+    function LinkButton(props) {
+        var variant = "outline-danger";
+        if (props.color === "yellow") {
+            variant = "outline-warning";
+        } else if (props.color === "green") {
+            variant = "outline-success";
+        }
+
+        return props.link !== '' && <a href={props.link} className="doc-link-button"><Button variant={variant} style={{backgrounColor: "red !important"}}>{props.value}</Button></a>
     }
 
     return (
@@ -24,6 +35,12 @@ function DocCard(props) {
                 <p className="doc-authors"><span style={{fontWeight:'bold'}}>Authors</span>: {meta.authors}</p>
                 <p className="doc-abstract"><span style={{fontWeight:'bold'}}>Abstract</span>: {meta.abstract}</p>
                 {meta.workshop !== '' && <p className="doc-workshop"><span style={{fontWeight:'bold'}}>Workshop</span>: {meta.workshop}</p>}
+                <div className="doc-attributes">
+                    <span style={{fontWeight:'bold'}}>Links:</span>
+                    <LinkButton link={meta.pdf_link} value="pdf" color="red"/>
+                    <LinkButton link={meta.arxiv_link} value="arxiv" color="yellow"/>
+                    <LinkButton link={meta.supp_link} value="supp" color="green"/>
+                </div>
             </div>
         </div>
     );

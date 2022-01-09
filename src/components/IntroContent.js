@@ -28,7 +28,7 @@ First, ArXiv is sensitive to typo. Even if you capitalize or forget to capitaliz
 <p>We choose papers that are published on Conference on Computer Vision and Pattern Recognition (CVPR) and International Conference on Computer Vision (ICCV) as our data. CVPR is an annual conference on computer vision and pattern recognition, which is regarded as one of the most important conferences in its field. ICCV is another top conference in computer vision and is held every two years. We choose CVPR and ICCV as our domain because many outstanding papers are published on them.</p>
 <p>Selenium is a convenient autonomous crawler in Python. With Selenium, we obtained approximately 15,000 papers published in CVPR and ICCV from 2015 to 2021. Each paper can be treated as a document, which consists of title, authors, abstract, LaTex version, publised year, whether it is in the workshop and whether it has supplementary material. And we use regular expressions to extract the subsections from the latex. The obtained data are stored in Pandas DataFrame.</p>
 <div align="center">
-<img src="https://cdn-images-1.medium.com/max/800/1*Jhf_20CBYAm-mwkstSiBlA.png"/>
+<img src="https://cdn-images-1.medium.com/max/800/1*Jhf_20CBYAm-mwkstSiBlA.png" width="65%"/>
 <p className='img-caption'>An example of our crawled papers</p>
 </div>
 <p>The next step is to select several queries and annotate the relevance between the queries and some candidate documents. The candidates are first retrieved by classical methods like BM25. We scored the relevance from 5 (very high relevance) to 1 (very low relevance) and seperated the dataset into training data (40 queries), validation data (10 queries) and test data (10 queries).</p>
@@ -38,7 +38,7 @@ First, ArXiv is sensitive to typo. Even if you capitalize or forget to capitaliz
 <h4 id='31-word2vec'>3.1 Word2Vec</h4>
 <p><a href='https://github.com/RaRe-Technologies/gensim'>Gensim</a> is a useful library when it comes to mapping each word into a semantic vector, which is called the embedding vector. After turning words into embeddings, words with similar meanings with have similar embeddings.</p>
 <div align="center">
-<img src="https://cdn-images-1.medium.com/max/800/0*Ri2A787ZiMR2LvF0.png"/>
+<img src="https://cdn-images-1.medium.com/max/800/0*Ri2A787ZiMR2LvF0.png" width="60%"/>
 <p className='img-caption'>The concept of embedding</p>
 </div>
 <p>To put all the text data into the Word2vec model, we have to parse the texts into lists of strings. <a href='https://www.nltk.org/'>NLTK</a> can help transform a bunch of long texts into short lists of tokens.</p>
@@ -133,12 +133,12 @@ self.model.fit(
 <h3 id='4-results-and-discussions'>4. Results and Discussions</h3>
 <p>First, let&#39;s introduce the metric used in our project. nDCG is a type of weighted sum of relevance scores of a sorted list of retrieved documents.</p>
 <div align="center">
-<img src="https://cdn-images-1.medium.com/max/800/1*tQolkMu38lgpy--GVPEFIQ.png">
+<img src="https://cdn-images-1.medium.com/max/800/1*tQolkMu38lgpy--GVPEFIQ.png" width="30%">
 </div>
 <p>where relᵢ is the relevance score of the i-th document, and iDCG is the maximum possible DCG score when the order becomes the ideal order. This metric attaches more importance to the correct ranking of top-k results.</p>
 <p>Then let&#39;s compare our list-wise LGBM with other baselines we have mentioned above.</p>
 <div align="center">
-<img src="https://cdn-images-1.medium.com/max/1200/1*bhjPuRzyHRkWF8F9Fwcwbg.png" width="1000">
+<img src="https://cdn-images-1.medium.com/max/1200/1*bhjPuRzyHRkWF8F9Fwcwbg.png" width="88%">
 </div>
 <p>The list-wise LGBM outperforms other models.From the figure, we can see that listwise LGBM model works best, while pointwise LGBM and logistic regression cannot exceed BM25. The result is close to what we expect.</p>
 <p>LGBM is a boosting algorithm, but logistic regression is a single model. Therefore, it is reasonable that aggregation of different models work better than a single model. Besides, LGBM is able to fit non-linear features, while, as a generalized linear model, logistic regression cannot fit non-linear features well.</p>
@@ -155,7 +155,7 @@ self.model.fit(
 </code></pre>
 <p>The number shows how many times that the feature has been used to split a node in decision trees of LGBM. The more times it is used, the more crucial the feature becomes.</p>
 <div align="center">
-<img src="https://cdn-images-1.medium.com/max/1200/1*uP4vgpLqG-9H9pKA-joCfA.png" width="900"/>
+<img src="https://cdn-images-1.medium.com/max/1200/1*uP4vgpLqG-9H9pKA-joCfA.png" width="80%"/>
 <p>The ranking of feature importance of our LGBM model.</p>
 </div>
 <p>In the picture, &quot;score&quot; is the weighted sum of BM25 scores of different parts of a document. The suffix &quot;s&quot; stands for subtitles, &quot;a&quot; for &quot;abstract&quot; and &quot;t&quot; for title. We can get that the most important features are BM25 scores and innerproducts of embeddings, which agrees with our expectation.</p>

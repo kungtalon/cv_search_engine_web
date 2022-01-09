@@ -4,7 +4,7 @@ function HomeInfo() {
 
 
     return (
-        <Container>
+        <Container style={{width:"60%"}}>
             <div className="home-card">
                 <Card bg="Light">
                     <Card.Header>

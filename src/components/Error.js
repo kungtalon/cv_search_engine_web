@@ -8,7 +8,7 @@ function Error(props) {
         if (status === 500){
             return "Search API Not Working!";
         } else {
-            return "Timeout Error! Please try again later...";
+            return "No response from API... Please try again 1 min later...";
         }
     }
 

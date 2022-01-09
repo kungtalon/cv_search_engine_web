@@ -14,7 +14,6 @@ function SearchBox(props) {
 
   function handleQueryChange(event) {
     setSearchQuery(event.target.value);
-    console.log(searchQuery);
   }
 
   function handleCheckBoxChange(event) {
